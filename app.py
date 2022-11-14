@@ -6,7 +6,9 @@ import plotly
 import plotly.express as px
 import plotly.graph_objects as go
 import plotly.io as pio
+import pickle
 from flask import Flask, jsonify, redirect, render_template, request, url_for
+from pycaret.classification import *
 
 app = Flask(__name__)
 
@@ -50,6 +52,31 @@ graph5JSON = json.dumps(fig5, cls=plotly.utils.PlotlyJSONEncoder)
 fig6 = px.scatter_geo(df,lon='longitude_decimal',lat="latitude_decimal",hover_name="Times", scope="south america",
         color="Times", size=[15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15],opacity=0.5,symbol="Estádio",center={"lat":-15,"lon":-50})
 graph6JSON = json.dumps(fig6, cls=plotly.utils.PlotlyJSONEncoder)
+
+modelo = load_model('static/assets/models/my_best_pipeline')
+colunas = ['ITEM_ID','ALTURA','CAPACIDADE_(L)','COMPOSICAO','COR','FORMATO','LARGURA','MARCA',
+'PARA_LAVA_LOUCAS','PARA_MICRO_ONDAS','PESO','PROFUNDIDADE','TEMPO_GARANTIA','TEM_FERRO_FUNDIDO','TEM_GRELHA',
+    'TEM_TAMPA','TIPO_PRODUTO','TIPO_WOK','SESSION_ID','ITEM_PRICE']
+
+@app.route("/teste")
+def teste():
+    return render_template("teste.html")
+
+
+@app.route("/teste2",methods=['POST'])
+def teste2():
+    int_features = [x for x in request.form.values()]
+    final = np.array(int_features)
+    data_unseen = pd.DataFrame([final], columns = colunas)
+    prediction = predict_model(modelo, data=data_unseen, round = 0)
+    prediction = prediction.Label[0]
+    if prediction == 1.0:
+        prediction = 'Interessante'
+    else:
+        prediction = 'Não interessante'
+    return render_template("teste.html",pred=f'Esse perfil foi classificado como {prediction}')
+
+
 
 
 @app.route("/bets")
