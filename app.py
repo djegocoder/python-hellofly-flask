@@ -5,7 +5,8 @@ import plotly.graph_objects as go
 import json
 import pandas as pd
 import os
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for,request,redirect, jsonify
+from pycaret.regression import *
 
 app = Flask(__name__)
 
