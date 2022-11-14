@@ -1,12 +1,12 @@
+import json
+import os
+
+import pandas as pd
 import plotly
 import plotly.express as px
-import plotly.io as pio
 import plotly.graph_objects as go
-import json
-import pandas as pd
-import os
-from flask import Flask, render_template, url_for,request,redirect, jsonify
-from pycaret.regression import *
+import plotly.io as pio
+from flask import Flask, jsonify, redirect, render_template, request, url_for
 
 app = Flask(__name__)
 
