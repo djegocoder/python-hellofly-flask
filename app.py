@@ -1,11 +1,17 @@
 import os
-import numpy as np
-import pandas as pd
-import pickle
-from flask import Flask, jsonify, redirect, render_template, request, url_for
-from pycaret.classification import load_model, predict_model
+from flask import Flask, render_template,request
+from flask_mail import Mail, Message
 
 app = Flask(__name__)
+
+app.config['MAIL_SERVER']='smtp.gmail.com'
+app.config['MAIL_PORT'] = 465
+app.config['MAIL_USERNAME'] = 'diegotadsil'
+app.config['MAIL_PASSWORD'] = 'iucllhycwtqvcqfv'
+app.config['MAIL_USE_TLS'] = False
+app.config['MAIL_USE_SSL'] = True
+mail = Mail(app)
+
 
 @app.route("/")
 def resume():
@@ -47,6 +53,18 @@ def portifolio8():
 def portifolio9():
     return render_template("portifolio-9.html")
 
+@app.route("/email",methods=['POST'])
+def index():
+    formulario = [x for x in request.form.values()]
+    nome = formulario[0]
+    email = formulario[1]
+    assunto = formulario[2]
+    menssagem = formulario[3]
+    msg = Message(subject='Email do site: '+assunto, sender = email, recipients = ['diegotadsil@gmail.com'])
+    msg.body = 'Enviado por: '+nome+'\nE-mail: '+email+'\n\n'+menssagem
+    mail.send(msg)
+    return "Mensagem enviada, Obrigado!"
+
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT",5001))
+    port = int(os.environ.get("PORT",5000))
     app.run(debug=True, host='0.0.0.0', port=port)

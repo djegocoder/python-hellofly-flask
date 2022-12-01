@@ -255,8 +255,8 @@
             <div class="portfolio-wrap">
               <img src="static/assets/img/portfolio/portfolio-x.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Campeonato Brasileiro de Bet</h4>
-                <h5>Predição {Python-Pandas-SKlearn-Plotly}</h5>
+                <h4>Onda Bet Brasil</h4>
+                <h5>Classificação</h5>
                 <div class="portfolio-links">
                   <a href="static/assets/img/portfolio/portfolio-x.jpg" data-gallery="portfolioGallery"
                     class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
@@ -272,7 +272,7 @@
               <img src="static/assets/img/portfolio/portfolio-4.png" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>Amex Default - Kaggle</h4>
-                <p>Aprendizado de Máquina</p>
+                <h5>Detecção de anomalia</h5>
                 <div class="portfolio-links">
                   <a href="static/assets/img/portfolio/portfolio-4.png" data-gallery="portfolioGallery"
                     class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
@@ -287,8 +287,8 @@
             <div class="portfolio-wrap">
               <img src="static/assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>App 3</h4>
-                <h5>App</h5>
+                <h4>Sugestão</h4>
+                <h5>Sistema de recomendação</h5>
                 <div class="portfolio-links">
                   <a href="static/assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery"
                     class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
@@ -299,14 +299,30 @@
             </div>
           </div>
 
+          <div class="col-lg-4 col-md-6 portfolio-item filter-computer-vision">
+            <div class="portfolio-wrap">
+              <img src="static/assets/img/portfolio/yolov4.webp" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Visão computacional</h4>
+                <h5>Classificação</h5>
+                <div class="portfolio-links">
+                  <a href="static/assets/img/portfolio/yolov4.webp" data-gallery="portfolioGallery"
+                    class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
+                  <a href="portifolio3" class="portfolio-details-lightbox" data-glightbox="type: external"
+                    title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div class="col-lg-4 col-md-6 portfolio-item filter-predicts">
             <div class="portfolio-wrap">
-              <img src="static/assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
+              <img src="static/assets/img/portfolio/portifolio-7.png" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Card 1</h4>
-                <h5>Card</h5>
+                <h4>Análise marketplace</h4>
+                <h5>Classificação</h5>
                 <div class="portfolio-links">
-                  <a href="static/assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery"
+                  <a href="static/assets/img/portfolio/portifolio-7.png" data-gallery="portfolioGallery"
                     class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
                   <a href="portifolio4" class="portfolio-details-lightbox" data-glightbox="type: external"
                     title="Portfolio Details"><i class="bx bx-link"></i></a>
@@ -317,12 +333,12 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-PLN">
             <div class="portfolio-wrap">
-              <img src="static/assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
+              <img src="static/assets/img/portfolio/varejo.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Card 3</h4>
-                <h5>Card</h5>
+                <h4>Estoque Walmart - Kaggle</h4>
+                <h5>Séries temporais</h5>
                 <div class="portfolio-links">
-                  <a href="static/assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery"
+                  <a href="static/assets/img/portfolio/varejo.jpg" data-gallery="portfolioGallery"
                     class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
                   <a href="portifolio5" class="portfolio-details-lightbox" data-glightbox="type: external"
                     title="Portfolio Details"><i class="bx bx-link"></i></a>
@@ -335,8 +351,8 @@
             <div class="portfolio-wrap">
               <img src="static/assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Web 3</h4>
-                <h5>Web</h5>
+                <h4>Integração SQL</h4>
+                <h5>Processamento de linguagem natural</h5>
                 <div class="portfolio-links">
                   <a href="static/assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery"
                     class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
@@ -827,7 +843,7 @@
 
           <div class="col-lg-8 mt-5 mt-lg-0">
 
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form action="/email" method="post"  class="php-email-form">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Seu nome" required>
@@ -844,7 +860,7 @@
               </div>
               <div class="my-3">
                 <div class="loading">Carregando</div>
-                <div class="error-message"></div>
+                <div class="error-message">Algum erro aconteceu. Desculpe.</div>
                 <div class="sent-message">Sua mensagem foi enviada. Obrigado!</div>
               </div>
               <div class="text-center"><button type="submit">Enviar mensagem</button></div>
