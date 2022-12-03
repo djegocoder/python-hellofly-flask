@@ -10,6 +10,7 @@ app.config['MAIL_USERNAME'] = 'diegotadsil'
 app.config['MAIL_PASSWORD'] = 'iucllhycwtqvcqfv'
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
+app.config['MAIL_SUPPRESS_SEND'] = False
 mail = Mail(app)
 
 
@@ -53,17 +54,22 @@ def portifolio8():
 def portifolio9():
     return render_template("portifolio-9.html")
 
-@app.route("/email",methods=['POST'])
+@app.route("/email",methods=['GET','POST'])
 def index():
     formulario = [x for x in request.form.values()]
     nome = formulario[0]
     email = formulario[1]
     assunto = formulario[2]
     menssagem = formulario[3]
-    msg = Message(subject='Email do site: '+assunto, sender = email, recipients = ['diegotadsil@gmail.com'])
+    msg = Message(subject='Portifólio: '+assunto, sender = email, recipients = ['diegotadsil@gmail.com'])
     msg.body = 'Enviado por: '+nome+'\nE-mail: '+email+'\n\n'+menssagem
     mail.send(msg)
-    return "Mensagem enviada, Obrigado!"
+    return "OK"
+
+
+    app.logger.debug(message.subject)
+
+
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT",5000))
