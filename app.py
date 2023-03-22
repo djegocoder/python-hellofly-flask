@@ -18,41 +18,61 @@ mail = Mail(app)
 def resume():
     return render_template("index.html")
 
-@app.route("/portifolio1")
-def portifolio1():
-    return render_template("portifolio-1.html")
+@app.route("/portfolio1")
+def portfolio1():
+    return render_template("portfolio-1.html")
 
-@app.route("/portifolio2")
-def portifolio2():
-    return render_template("portifolio-2.html")
+@app.route("/portfolio2")
+def portfolio2():
+    return render_template("portfolio-2.html")
 
-@app.route("/portifolio3")
-def portifolio3():
-    return render_template("portifolio-3.html")
+@app.route("/portfolio3")
+def portfolio3():
+    return render_template("portfolio-3.html")
 
-@app.route("/portifolio4")
-def portifolio4():
-    return render_template("portifolio-4.html")
+@app.route("/portfolio4")
+def portfolio4():
+    return render_template("portfolio-4.html")
 
-@app.route("/portifolio5")
-def portifolio5():
-    return render_template("portifolio-5.html")
+@app.route("/portfolio5")
+def portfolio5():
+    return render_template("portfolio-5.html")
 
-@app.route("/portifolio6")
-def portifolio6():
-    return render_template("portifolio-6.html")
+@app.route("/portfolio6")
+def portfolio6():
+    return render_template("portfolio-6.html")
 
-@app.route("/portifolio7")
-def portifolio7():
-    return render_template("portifolio-7.html")    
+@app.route("/portfolio7")
+def portfolio7():
+    return render_template("portfolio-7.html")    
 
-@app.route("/portifolio8")
-def portifolio8():
-    return render_template("portifolio-8.html")
+@app.route("/portfolio8")
+def portfolio8():
+    return render_template("portfolio-8.html")
 
-@app.route("/portifolio9")
-def portifolio9():
-    return render_template("portifolio-9.html")
+@app.route("/portfolio9")
+def portfolio9():
+    return render_template("portfolio-9.html")
+
+@app.route("/portfolio10")
+def portfolio10():
+    return render_template("portfolio-10.html")
+
+@app.route("/portfolio11")
+def portfolio11():
+    return render_template("portfolio-11.html")
+
+@app.route("/portfolio12")
+def portfolio12():
+    return render_template("portfolio-12.html")
+
+@app.route("/portfolio13")
+def portfolio13():
+    return render_template("portfolio-13.html")
+
+@app.route("/portfolio14")
+def portfolio14():
+    return render_template("portfolio-14.html")
 
 @app.route("/email",methods=['GET','POST'])
 def index():
